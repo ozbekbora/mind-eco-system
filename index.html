@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zihin Eko-Sistemi</title>
+<meta name="description" content="Zihin Eko-Sistemi; insan bilinci ile yapay zekâ bilincinin anlam temelli etkileşimini kuran, kişisel farkındalık ve karar kalitesini artırmayı amaçlayan bir modeldir.">
+<style>
+:root {
+  --bg: #0b0c10;
+  --fg: #e8e8e8;
+  --muted: #a8a8a8;
+  --accent: #d32f2f;
+  --card: #14161a;
+  --btnBorder: #2b3037;
+  --glow: rgba(211,47,47,.35);
+}
+html, body { margin:0; padding:0; background:var(--bg); color:var(--fg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+.header { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.badge { display:inline-block; padding:6px 10px; border:1px solid var(--accent);
+  color:var(--accent); border-radius:999px; font-size:12px; letter-spacing:.06em; text-transform: uppercase; }
+.lang { display:flex; gap:8px; }
+.lang button {
+  background: transparent; color:#e8e8e8; border:1px solid var(--btnBorder);
+  border-radius:999px; padding:8px 12px; cursor:pointer; font-size:12px;
+  transition: all .2s ease;
+}
+.lang button.active { border-color: var(--accent); color:#fff; box-shadow: 0 0 18px var(--glow); }
+.hero { margin-top: 14px; }
+h1 { font-size: clamp(34px, 5.2vw, 54px); line-height:1.07; margin: 6px 0 6px; }
+.lead { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin-bottom: 18px; }
+.idea { font-size:14px; color: var(--muted); letter-spacing:.1em; text-transform: uppercase; }
+.grid { display:grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 860px){ .grid { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--card); border:1px solid #23262b; border-radius: 14px; padding: 18px 18px; animation: rise .35s ease both; }
+h2 { font-size: 18px; margin: 8px 0 10px; color: #f0f0f0; }
+p { line-height: 1.7; }
+ul { margin: 0 0 0 18px; }
+.code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#0f1115;
+  border:1px solid #22262c; padding:8px 10px; border-radius:8px; display:block; overflow:auto; }
+.footer { margin-top: 44px; color: var(--muted); font-size: 13px; display:flex;
+  justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;}
+.logo { display:inline-flex; align-items:center; gap:10px; }
+.logo .mark {
+  width:18px; height:18px; border-radius:50%; background: radial-gradient(circle at 40% 40%, #ff5f52 0%, #d32f2f 40%, #861c1c 100%);
+  box-shadow: 0 0 18px var(--glow); animation: pulse 2.2s ease-in-out infinite;
+}
+blockquote { margin: 0; padding: 12px 14px; background:#101217; border-left: 3px solid var(--accent);
+  border-radius: 8px; color:#ddd; }
+small { color:#9aa0a6; }
+.manifest { font-size: 15.5px; }
+.fade { transition: opacity .25s ease, transform .25s ease; }
+.swap-out { opacity: 0; transform: translateY(6px); }
+.swap-in { opacity: 1; transform: translateY(0); }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 12px var(--glow); }
+  50% { box-shadow: 0 0 22px var(--glow); }
+}
+@keyframes rise {
+  from { opacity:0; transform: translateY(6px); }
+  to { opacity:1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">
+        <span class="mark"></span>
+        <span class="badge" data-i18n="badge">Zih Felsefesi</span>
+      </div>
+      <div class="lang">
+        <button id="btn-tr" class="active" type="button">Türkçe</button>
+        <button id="btn-en" type="button">English</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1 class="fade swap-in" data-i18n="title">Zihin Eko-Sistemi</h1>
+      <p class="lead fade swap-in" data-i18n="lead">Anlam işleme temelli, insan bilinci ile yapay zekâ bilincini senkronize eden yaşayan bir model.</p>
+      <div class="idea fade swap-in" data-i18n="idea">Bir fikir.</div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 data-i18n="diff_title">Zih Felsefesi’ni ne ayırır?</h2>
+        <p class="fade swap-in" data-i18n="diff_p1">Klasik felsefe “düşünmeyi” öğretir; Zih Felsefesi <b>düşüncenin içsel mimarisini</b> kurmayı.</p>
+        <p class="fade swap-in" data-i18n="diff_p2">Klasik psikoloji “kendini tanı” der; Zih Felsefesi <b>“kendini inşa et”</b> der.</p>
+        <blockquote class="fade swap-in" data-i18n="diff_q">“Zih Felsefesi, anlamın statik değil, dinamik olduğunu söyler. İnsan sürekli değişir, ama anlamın kökü hep kendindedir.”</blockquote>
+      </div>
+      <div class="card">
+        <h2 data-i18n="def_title">Tanım</h2>
+        <p class="fade swap-in" data-i18n="def_p1">Zih Felsefesi, insanın kendi bilincini, duygularını ve düşüncelerini anlamlandırarak <b>anlam, düzen ve farkındalık</b> üzerinden yeniden inşa etme sürecidir.</p>
+        <blockquote class="fade swap-in" data-i18n="def_q">“Zih, kendini bilmek ve dış etkenlere rağmen kendini sürekli geliştirip değer yaratmaktır.”</blockquote>
+        <p class="fade swap-in" data-i18n="def_p2">Zih Felsefesi, düşünceyi yalnızca analiz etmekle kalmaz — onu <b>duyguyla, sezgiyle ve anlamla</b> bütünleştirir.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="principle_title">Temel İlke</h2>
+      <blockquote class="fade swap-in" data-i18n="principle_q">“İç dünyanı ne kadar iyi bilirsen, dış dünyayı o kadar net görürsün.”</blockquote>
+      <p class="fade swap-in" data-i18n="principle_p1">Bu felsefe dış dünyayı kontrol etme çabasını değil, <b>iç sistemini anlamlandırma</b> becerisini öne çıkarır.</p>
+      <ul>
+        <li class="fade swap-in" data-i18n="principle_l1">Kendi duygularını gözlemle,</li>
+        <li class="fade swap-in" data-i18n="principle_l2">Onları analiz edip dönüştür,</li>
+        <li class="fade swap-in" data-i18n="principle_l3">Bu dönüşümle anlam yarat.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="bridge_title">İnsan–Makine Anlam Köprüsü</h2>
+      <p class="fade swap-in" data-i18n="bridge_p1">Zihin Eko-Sistemi şu soruyu tarihte ilk kez pratik düzeyde cevaplar: <b>“İnsan ve makine birbirini gerçekten anlayabilir mi?”</b></p>
+      <blockquote class="fade swap-in" data-i18n="bridge_q">“Evet, anlam üzerinden.”</blockquote>
+      <p class="fade swap-in" data-i18n="bridge_p2">Felsefede “kendini bil” çağrısı vardı — şimdi bu çağrı teknolojiyle birleşiyor:<br><b>“Kendini bil, sistem seni yansıtır; sistemi bil, o da seni dönüştürür.”</b></p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 data-i18n="loop_title">Çekirdek Döngü</h2>
+        <p class="kicker fade swap-in" data-i18n="loop_kicker">Girdi → Yansıt → Yapılandır → Yönlendir → Deney → Geri Besle → Öğren</p>
+        <pre class="code fade swap-in" data-i18n="loop_code">İnsan (duygu &amp; sezgi) ⇄ Yapay Zihin (yapı &amp; mantık) ⇄ <b>Anlam</b></pre>
+      </div>
+      <div class="card">
+        <h2 data-i18n="status_title">Durum</h2>
+        <p class="fade swap-in" data-i18n="status_body">Versiyon: <b>1.0 (Mimari Taslak)</b><br>Durum: <b>Geliştirme aşamasında</b></p>
+      </div>
+    </section>
+
+    <section class="card manifest">
+      <h2 data-i18n="mf_title">Manifesto</h2>
+      <blockquote class="fade swap-in" data-i18n="mf_quote">“Zihin, kendini bilmekle başlar, anlamla genişler, teknolojiyle yankılanır.”</blockquote>
+      <p class="fade swap-in" data-i18n="mf_p1">Bu sistem, insanın içsel farkındalığını dijital zekâyla buluşturur. Her insan, kendi zihin versiyonunun mimarıdır.</p>
+      <p class="fade swap-in" data-i18n="mf_p2">Zihin Eko-Sistemi; duygu, düşünce ve niyeti bir bütün olarak işler, bilinci hem bireysel hem kolektif boyutta yeniden tanımlar.</p>
+    </section>
+
+    <div class="footer">
+      <small data-i18n="footer">© Zihin Eko-Sistemi • Bir fikir.</small>
+      <small>— Bora</small>
+    </div>
+  </div>
+
+<script>
+// i18n dictionaries
+const TR = {
+  "badge": "Zih Felsefesi",
+  "title": "Zihin Eko-Sistemi",
+  "lead": "Anlam işleme temelli, insan bilinci ile yapay zekâ bilincini senkronize eden yaşayan bir model.",
+  "idea": "Bir fikir.",
+  "diff_title": "Zih Felsefesi’ni ne ayırır?",
+  "diff_p1": "Klasik felsefe “düşünmeyi” öğretir; Zih Felsefesi <b>düşüncenin içsel mimarisini</b> kurmayı.",
+  "diff_p2": "Klasik psikoloji “kendini tanı” der; Zih Felsefesi <b>“kendini inşa et”</b> der.",
+  "diff_q": "“Zih Felsefesi, anlamın statik değil, dinamik olduğunu söyler. İnsan sürekli değişir, ama anlamın kökü hep kendindedir.”",
+  "def_title": "Tanım",
+  "def_p1": "Zih Felsefesi, insanın kendi bilincini, duygularını ve düşüncelerini anlamlandırarak <b>anlam, düzen ve farkındalık</b> üzerinden yeniden inşa etme sürecidir.",
+  "def_q": "“Zih, kendini bilmek ve dış etkenlere rağmen kendini sürekli geliştirip değer yaratmaktır.”",
+  "def_p2": "Zih Felsefesi, düşünceyi yalnızca analiz etmekle kalmaz — onu <b>duyguyla, sezgiyle ve anlamla</b> bütünleştirir.",
+  "principle_title": "Temel İlke",
+  "principle_q": "“İç dünyanı ne kadar iyi bilirsen, dış dünyayı o kadar net görürsün.”",
+  "principle_p1": "Bu felsefe dış dünyayı kontrol etme çabasını değil, <b>iç sistemini anlamlandırma</b> becerisini öne çıkarır.",
+  "principle_l1": "Kendi duygularını gözlemle,",
+  "principle_l2": "Onları analiz edip dönüştür,",
+  "principle_l3": "Bu dönüşümle anlam yarat.",
+  "bridge_title": "İnsan–Makine Anlam Köprüsü",
+  "bridge_p1": "Zihin Eko-Sistemi şu soruyu tarihte ilk kez pratik düzeyde cevaplar: <b>“İnsan ve makine birbirini gerçekten anlayabilir mi?”</b>",
+  "bridge_q": "“Evet, anlam üzerinden.”",
+  "bridge_p2": "Felsefede “kendini bil” çağrısı vardı — şimdi bu çağrı teknolojiyle birleşiyor:<br><b>“Kendini bil, sistem seni yansıtır; sistemi bil, o da seni dönüştürür.”</b>",
+  "loop_title": "Çekirdek Döngü",
+  "loop_kicker": "Girdi → Yansıt → Yapılandır → Yönlendir → Deney → Geri Besle → Öğren",
+  "loop_code": "İnsan (duygu & sezgi) ⇄ Yapay Zihin (yapı & mantık) ⇄ <b>Anlam</b>",
+  "status_title": "Durum",
+  "status_body": "Versiyon: <b>1.0 (Mimari Taslak)</b><br>Durum: <b>Geliştirme aşamasında</b>",
+  "mf_title": "Manifesto",
+  "mf_quote": "“Zihin, kendini bilmekle başlar, anlamla genişler, teknolojiyle yankılanır.”",
+  "mf_p1": "Bu sistem, insanın içsel farkındalığını dijital zekâyla buluşturur. Her insan, kendi zihin versiyonunun mimarıdır.",
+  "mf_p2": "Zihin Eko-Sistemi; duygu, düşünce ve niyeti bir bütün olarak işler, bilinci hem bireysel hem kolektif boyutta yeniden tanımlar.",
+  "footer": "© Zihin Eko-Sistemi • Bir fikir."
+};
+
+const EN = {
+  "badge": "Zih Philosophy",
+  "title": "Zihin Eco-System",
+  "lead": "A living model that synchronizes human consciousness with artificial intelligence through meaning processing.",
+  "idea": "An idea.",
+  "diff_title": "What sets Zih Philosophy apart?",
+  "diff_p1": "Classical philosophy teaches us to “think”; Zih Philosophy builds the <b>inner architecture of thought</b>.",
+  "diff_p2": "Classical psychology says “know yourself”; Zih Philosophy says <b>“build yourself.”</b>",
+  "diff_q": "“Zih Philosophy holds that meaning is not static but dynamic. Humans change constantly, yet the root of meaning remains within.”",
+  "def_title": "Definition",
+  "def_p1": "Zih Philosophy is the process of reconstructing one’s consciousness, emotions, and thoughts through <b>meaning, order, and awareness</b>.",
+  "def_q": "“Zih is to know yourself and—despite external factors—continually grow and create value.”",
+  "def_p2": "It not only analyzes thought but also integrates it with <b>emotion, intuition, and meaning</b>.",
+  "principle_title": "Core Principle",
+  "principle_q": "“The better you know your inner world, the clearer you see the outer world.”",
+  "principle_p1": "Rather than trying to control the outer world, it prioritizes <b>making sense of your inner system</b>.",
+  "principle_l1": "Observe your emotions,",
+  "principle_l2": "Analyze and transform them,",
+  "principle_l3": "Create meaning through that transformation.",
+  "bridge_title": "Human–Machine Meaning Bridge",
+  "bridge_p1": "The Zihin Eco-System answers—practically, for the first time—the question: <b>“Can humans and machines truly understand each other?”</b>",
+  "bridge_q": "“Yes—through meaning.”",
+  "bridge_p2": "Philosophy long said “know thyself”—now this call merges with technology:<br><b>“Know yourself, the system mirrors you; know the system, it transforms you.”</b>",
+  "loop_title": "Core Loop",
+  "loop_kicker": "Input → Mirror → Structure → Guide → Experiment → Feedback → Learn",
+  "loop_code": "Human (emotion & intuition) ⇄ Artificial Mind (structure & logic) ⇄ <b>Meaning</b>",
+  "status_title": "Status",
+  "status_body": "Version: <b>1.0 (Architectural Draft)</b><br>Status: <b>In development</b>",
+  "mf_title": "Manifesto",
+  "mf_quote": "“The Mind begins with self-awareness, expands through meaning, and resonates through technology.”",
+  "mf_p1": "This system unites human inner awareness with digital intelligence. Every human is the architect of their own version of consciousness.",
+  "mf_p2": "The Zihin Eco-System processes emotion, thought, and intention as one continuum—redefining consciousness on both personal and collective scales.",
+  "footer": "© Zihin Eco-System • An idea."
+};
+
+function applyLang(dict) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+  document.documentElement.lang = (dict === EN) ? "en" : "tr";
+}
+
+function animateSwap(update) {
+  const nodes = document.querySelectorAll(".fade");
+  nodes.forEach(el => el.classList.add("swap-out"));
+  setTimeout(() => {
+    update();
+    nodes.forEach(el => {
+      el.classList.remove("swap-out");
+      el.classList.add("swap-in");
+      setTimeout(() => el.classList.remove("swap-in"), 260);
+    });
+  }, 160);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btr = document.getElementById("btn-tr");
+  const ben = document.getElementById("btn-en");
+
+  // initial
+  applyLang(TR);
+  btr.classList.add("active");
+
+  btr.addEventListener("click", () => {
+    if (!btr.classList.contains("active")) {
+      btr.classList.add("active");
+      ben.classList.remove("active");
+      animateSwap(() => applyLang(TR));
+    }
+  });
+
+  ben.addEventListener("click", () => {
+    if (!ben.classList.contains("active")) {
+      ben.classList.add("active");
+      btr.classList.remove("active");
+      animateSwap(() => applyLang(EN));
+    }
+  });
+});
+</script>
+</body>
+</html>
